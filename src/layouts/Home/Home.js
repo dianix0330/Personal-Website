@@ -87,16 +87,6 @@ export const Home = () => {
         description="Designing a platform to help educators build better online courseware"
         buttonText="View project"
         buttonLink="/projects/smart-sparrow"
-        model={{
-          type: 'laptop',
-          alt: 'Smart Sparrow lesson builder',
-          textures: [
-            {
-              srcSet: [sprTexture, sprTextureLarge],
-              placeholder: sprTexturePlaceholder,
-            },
-          ],
-        }}
       />
       <ProjectSummary
         id="project-2"
@@ -108,20 +98,6 @@ export const Home = () => {
         description="Design and development for a video game tracking app built in React Native"
         buttonText="View website"
         buttonLink="https://gamestack.hamishw.com"
-        model={{
-          type: 'phone',
-          alt: 'App login screen',
-          textures: [
-            {
-              srcSet: [gamestackTexture, gamestackTextureLarge],
-              placeholder: gamestackTexturePlaceholder,
-            },
-            {
-              srcSet: [gamestackTexture2, gamestackTexture2Large],
-              placeholder: gamestackTexture2Placeholder,
-            },
-          ],
-        }}
       />
       <ProjectSummary
         id="project-3"
@@ -132,16 +108,16 @@ export const Home = () => {
         description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
         buttonText="View project"
         buttonLink="/projects/slice"
-        model={{
-          type: 'laptop',
-          alt: 'Annotating a biomedical image in the Slice app',
-          textures: [
-            {
-              srcSet: [sliceTexture, sliceTextureLarge],
-              placeholder: sliceTexturePlaceholder,
-            },
-          ],
-        }}
+        // model={{
+        //   type: 'laptop',
+        //   alt: 'Annotating a biomedical image in the Slice app',
+        //   textures: [
+        //     {
+        //       srcSet: [sliceTexture, sliceTextureLarge],
+        //       placeholder: sliceTexturePlaceholder,
+        //     },
+        //   ],
+        // }}
       />
       <Profile
         sectionRef={details}

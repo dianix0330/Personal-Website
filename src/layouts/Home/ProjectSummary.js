@@ -73,7 +73,7 @@ export const ProjectSummary = ({
 
   const renderPreview = visible => (
     <div className={styles.preview}>
-      {model.type === 'laptop' && (
+      {/* {model.type === 'laptop' && (
         <>
           <div className={styles.model} data-device="laptop">
             <Model
@@ -123,7 +123,7 @@ export const ProjectSummary = ({
             />
           </div>
         </>
-      )}
+      )} */}
     </div>
   );
 
