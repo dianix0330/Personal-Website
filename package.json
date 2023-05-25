@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "homepage": "https://hamishw.com",
   "description": "Portfolio site for Daniel Ayala",
-  "author": "Hamish Williams <hello@hamishw.com>",
+  "author": "Daniel Ayala <hello@hamishw.com>",
   "devDependencies": {
     "@mapbox/rehype-prism": "^0.8.0",
     "@storybook/addon-a11y": "^6.5.10",
