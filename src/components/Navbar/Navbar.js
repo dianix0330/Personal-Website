@@ -155,19 +155,34 @@ export const Navbar = () => {
       <NavToggle onClick={() => dispatch({ type: 'toggleMenu' })} menuOpen={menuOpen} />
       <nav className={styles.nav}>
         <div className={styles.navList}>
-          {navLinks.map(({ label, pathname }) => (
-            <RouterLink href={pathname} scroll={false} key={label}>
+          {navLinks.map(({ label, pathname, blank }) =>
+            blank ? (
               <Button secondary={true} className={styles.navItem}>
                 <a
-                  data-navbar-item
-                  aria-current={getCurrent(pathname)}
-                  onClick={handleNavItemClick}
+                  href={pathname}
+                  rel="noreferrer"
+                  scroll={false}
+                  key={label}
+                  target={'_blank'}
+                  style={{ color: 'black' }}
                 >
                   {label}
                 </a>
               </Button>
-            </RouterLink>
-          ))}
+            ) : (
+              <RouterLink href={pathname} scroll={false} key={label}>
+                <Button secondary={true} className={styles.navItem}>
+                  <a
+                    data-navbar-item
+                    aria-current={getCurrent(pathname)}
+                    onClick={handleNavItemClick}
+                  >
+                    {label}
+                  </a>
+                </Button>
+              </RouterLink>
+            )
+          )}
         </div>
         <NavbarIcons desktop />
       </nav>

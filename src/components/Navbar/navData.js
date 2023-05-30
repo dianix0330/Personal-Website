@@ -9,7 +9,9 @@ export const navLinks = [
   },
   {
     label: 'Resume',
-    pathname: '/resume',
+    pathname:
+      'https://drive.google.com/file/d/115dDVjVj0pc-j-CyZU8xUttWzDLsx7Zw/view?usp=sharing',
+    blank: true,
   },
   {
     label: 'Contact',
