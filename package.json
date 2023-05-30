@@ -36,6 +36,7 @@
     "stylelint-config-standard": "^26.0.0"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^4.37.4",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^7.1.0",
     "mdx-bundler": "^9.0.1",
