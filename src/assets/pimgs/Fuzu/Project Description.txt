@@ -1,0 +1,23 @@
+Fuzu Job Search Platform
+
+There are over 1,500,000 million job seekers on Fuzu, (Syndicode)
+We used ElasticSearch technology to return search results immediately.
+The platform also uses machine learning to evaluate candidate's skills and experience.
+
+This way, the employwer can immediately assess the relevance of each submitted application.
+
+We implement server side rendering by using NextJS to increase the website's load speed and optimized the pages. It's avearge loading speed is currently less than 2 seconds.
+
+Backend side was Ruby on Rails.
+
+
+When we started building Fuzu from scratch, React was our very obious choice.
+React is pretty good at creating Single Page Applications, but Google crawlers find it difficult to index and fully process the JS of our app.
+This will start affecting our SEO, you know for the job platform like Fuzu, the user's content is Hero.
+
+(We wanted user's profile should be in the top 5 search results when someone is client is looking for talent.)
+
+We all know that SEO takes a resonable amount of time to build, and we lost our initial couple of months by not getting indexed and ranked enough by Google.
+
+https://blog.peerlist.io/everything-about-our-migration-from-reactjs-to-nextjs/
+

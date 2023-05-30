@@ -5,7 +5,7 @@ import mwnz from 'assets/milkyway-nz.hdr';
 import mwpx from 'assets/milkyway-px.hdr';
 import mwpy from 'assets/milkyway-py.hdr';
 import mwpz from 'assets/milkyway-pz.hdr';
-import milkywayBg from 'assets/milkyway.jpg';
+import milkywayBg from 'assets/spr-background.jpg';
 import { Loader } from 'components/Loader';
 import { Section } from 'components/Section';
 import { tokens } from 'components/ThemeProvider/theme';

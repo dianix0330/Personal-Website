@@ -8,8 +8,8 @@ export const navLinks = [
     pathname: '/#details',
   },
   {
-    label: 'Articles',
-    pathname: '/articles',
+    label: 'Resume',
+    pathname: '/resume',
   },
   {
     label: 'Contact',
@@ -19,18 +19,18 @@ export const navLinks = [
 
 export const socialLinks = [
   {
+    label: 'LinkedIn',
+    url: 'https://linkedin.com/in/daniel-ayala-93033o',
+    icon: 'linkedin',
+  },
+  {
     label: 'Twitter',
-    url: 'https://twitter.com/hamishMW',
+    url: 'https://www.twitter.com/',
     icon: 'twitter',
   },
   {
-    label: 'Figma',
-    url: 'https://www.figma.com/@Hamish',
-    icon: 'figma',
-  },
-  {
     label: 'Github',
-    url: 'https://github.com/HamishMW',
+    url: 'https://github.com/dianix0330',
     icon: 'github',
   },
 ];

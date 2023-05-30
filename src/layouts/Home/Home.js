@@ -1,24 +1,39 @@
-import gamestackTexture2Large from 'assets/gamestack-list-large.jpg';
-import gamestackTexture2Placeholder from 'assets/gamestack-list-placeholder.jpg';
-import gamestackTexture2 from 'assets/gamestack-list.jpg';
-import gamestackTextureLarge from 'assets/gamestack-login-large.jpg';
-import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
-import gamestackTexture from 'assets/gamestack-login.jpg';
-import sliceTextureLarge from 'assets/slice-app-large.jpg';
-import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
-import sliceTexture from 'assets/slice-app.jpg';
+// import gamestackTexture2Large from 'assets/gamestack-list-large.jpg';
+// import gamestackTexture2Placeholder from 'assets/gamestack-list-placeholder.jpg';
+// import gamestackTexture2 from 'assets/gamestack-list.jpg';
+// import gamestackTextureLarge from 'assets/gamestack-login-large.jpg';
+// import gamestackTexturePlaceholder from 'assets/gamestack-login-placeholder.jpg';
+// import gamestackTexture from 'assets/gamestack-login.jpg';
+// import sliceTextureLarge from 'assets/slice-app-large.jpg';
+// import sliceTexturePlaceholder from 'assets/slice-app-placeholder.jpg';
+// import sliceTexture from 'assets/slice-app.jpg';
 import sprTextureLarge from 'assets/spr-lesson-builder-dark-large.jpg';
 import sprTexturePlaceholder from 'assets/spr-lesson-builder-dark-placeholder.jpg';
 import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
+
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
+import { Carousel } from 'components/Carousel';
 import { Intro } from 'layouts/Home/Intro';
 import { Profile } from 'layouts/Home/Profile';
 import { ProjectSummary } from 'layouts/Home/ProjectSummary';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Home.module.css';
 
-const disciplines = ['Developer', 'Prototyper', 'Animator', 'Illustrator', 'Modder'];
+import fuzuImgLarge from 'assets/pimgs/Fuzu/AdvicePage.jpg';
+import fuzuImgPlaceholder from 'assets/pimgs/Fuzu/SearchPage.jpg';
+import fuzuImg from 'assets/pimgs/Fuzu/Fuzu.jpg';
+import fourtyBoxes from 'assets/pimgs/40Boxes/40Boxes.jpg';
+import fourtyBoxesLarge from 'assets/pimgs/40Boxes/HomePage.jpg';
+import fourtyBoxesPlaceholder from 'assets/pimgs/40Boxes/ViewPage.jpg';
+import proofHub from 'assets/pimgs/ProofHub/ProofHub.jpg';
+import proofHubLarge from 'assets/pimgs/ProofHub/4.jpg';
+import proofHubPlaceholder from 'assets/pimgs/ProofHub/5.jpg';
+import pinpil from 'assets/pimgs/Pinpil/Pinpil.png';
+import pinpilLarge from 'assets/pimgs/Pinpil/Pinpil-large.png';
+import pinpilPlaceholder from 'assets/pimgs/Pinpil/Pinpil-large.png';
+
+const disciplines = ['Effort', 'Innovation', 'Collaboration', 'Passion', 'Patience'];
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -27,10 +42,20 @@ export const Home = () => {
   const projectOne = useRef();
   const projectTwo = useRef();
   const projectThree = useRef();
+  const projectFour = useRef();
+  const projectFive = useRef();
   const details = useRef();
 
   useEffect(() => {
-    const sections = [intro, projectOne, projectTwo, projectThree, details];
+    const sections = [
+      intro,
+      projectOne,
+      projectTwo,
+      projectThree,
+      projectFour,
+      projectFive,
+      details,
+    ];
 
     const sectionObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -68,7 +93,7 @@ export const Home = () => {
   return (
     <div className={styles.home}>
       <Meta
-        title="Designer + Developer"
+        title="Talent + Effort"
         description="Design portfolio of Daniel Ayala — a product designer working on web & mobile
           apps with a focus on motion, experience design, and accessibility."
       />
@@ -83,10 +108,13 @@ export const Home = () => {
         sectionRef={projectOne}
         visible={visibleSections.includes(projectOne.current)}
         index={1}
-        title="Designing the future of education"
-        description="Designing a platform to help educators build better online courseware"
+        title="Quick Pharmacy Search"
+        description="Quickly find the nearest pharmacies, learn about the availability of drugs and compare their cost."
         buttonText="View project"
-        buttonLink="/projects/smart-sparrow"
+        buttonLink="/projects/pinpil"
+        imagelarge={pinpilLarge}
+        image={pinpil}
+        placeholderimage={pinpilPlaceholder}
       />
       <ProjectSummary
         id="project-2"
@@ -94,20 +122,26 @@ export const Home = () => {
         sectionRef={projectTwo}
         visible={visibleSections.includes(projectTwo.current)}
         index={2}
-        title="Video game progress tracking"
-        description="Design and development for a video game tracking app built in React Native"
+        title="Online shopping"
+        description="Things you'll want at prices you'll love."
         buttonText="View website"
-        buttonLink="https://gamestack.hamishw.com"
+        buttonLink="https://40boxes.com/collections/live-brands"
+        imagelarge={fourtyBoxesLarge}
+        image={fourtyBoxes}
+        placeholderimage={fourtyBoxesPlaceholder}
       />
       <ProjectSummary
         id="project-3"
         sectionRef={projectThree}
         visible={visibleSections.includes(projectThree.current)}
         index={3}
-        title="Biomedical image collaboration"
-        description="Increasing the amount of collaboration in Slice, an app for biomedical imaging"
+        title="Project management & Team Collaboration"
+        description="Everything you need to manage teams, work and projects from a central location."
         buttonText="View project"
-        buttonLink="/projects/slice"
+        buttonLink="/projects/proofhub"
+        imagelarge={proofHubLarge}
+        image={proofHub}
+        placeholderimage={proofHubPlaceholder}
         // model={{
         //   type: 'laptop',
         //   alt: 'Annotating a biomedical image in the Slice app',
@@ -118,6 +152,33 @@ export const Home = () => {
         //     },
         //   ],
         // }}
+      />
+      <ProjectSummary
+        id="project-4"
+        alternate
+        sectionRef={projectFour}
+        visible={visibleSections.includes(projectFour.current)}
+        index={4}
+        title="Search trusted jobs vacancies in international online work"
+        description="Access job search, learning and career planning tools & alerts."
+        buttonText="View project"
+        buttonLink="/projects/fuzu"
+        imagelarge={fuzuImgLarge}
+        image={fuzuImg}
+        placeholderimage={fuzuImgPlaceholder}
+      />
+      <ProjectSummary
+        id="project-5"
+        sectionRef={projectFive}
+        visible={visibleSections.includes(projectFive.current)}
+        index={5}
+        title="Designing the future of education"
+        description="Designing a platform to help educators build better online courseware"
+        buttonText="View project"
+        buttonLink="/projects/smart-sparrow"
+        imagelarge={sprTextureLarge}
+        image={sprTexture}
+        placeholderimage={sprTexturePlaceholder}
       />
       <Profile
         sectionRef={details}

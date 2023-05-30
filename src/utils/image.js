@@ -46,7 +46,6 @@ export function srcSetToString(srcSet = []) {
   if (typeof srcSet === 'string') {
     return srcSet;
   }
-
   return srcSet.map(item => `${item.src} ${item.width}w`).join(', ');
 }
 

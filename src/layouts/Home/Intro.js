@@ -62,14 +62,13 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
       <Transition in key={theme.themeId} timeout={3000}>
         {(visible, status) => (
           <Fragment>
-            <DisplacementSphere />
             <header className={styles.text}>
               <h1 className={styles.name} data-visible={visible} id={titleId}>
                 <DecoderText text="Daniel Ayala" delay={300} />
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
                 <VisuallyHidden className={styles.label}>
-                  {`Designer + ${introLabel}`}
+                  {`Talent + ${introLabel}`}
                 </VisuallyHidden>
                 <span aria-hidden className={styles.row}>
                   <span
@@ -77,28 +76,50 @@ export function Intro({ id, sectionRef, disciplines, scrollIndicatorHidden, ...r
                     data-status={status}
                     style={cssProps({ delay: tokens.base.durationXS })}
                   >
-                    Designer
+                    Talent
                   </span>
                   <span className={styles.line} data-status={status} />
                 </span>
                 <div className={styles.row} component="span">
                   <AnimatePresence>
                     {disciplines.map(item => (
+                      // <Transition
+                      //   unmount
+                      //   in={item === currentDiscipline}
+                      //   timeout={{ enter: 3000, exit: 2000 }}
+                      //   key={item}
+                      // >
+                      //   {(visible, status) => (
+                      //     <span
+                      //       aria-hidden
+                      //       className={styles.word}
+                      //       data-plus={true}
+                      //       data-status={status}
+                      //       style={cssProps({ delay: tokens.base.durationL })}
+                      //     >
+                      //       {item}
+                      //     </span>
+                      //   )}
+                      // </Transition>
                       <Transition
                         unmount
                         in={item === currentDiscipline}
-                        timeout={{ enter: 3000, exit: 2000 }}
+                        timeout={{ enter: 3000, exit: 0 }}
                         key={item}
                       >
                         {(visible, status) => (
                           <span
                             aria-hidden
-                            className={styles.word}
                             data-plus={true}
                             data-status={status}
-                            style={cssProps({ delay: tokens.base.durationL })}
+                            style={cssProps({ delay: tokens.base.durationXL })}
                           >
-                            {item}
+                            <DecoderText
+                              key={item}
+                              text={'+' + item}
+                              delay={0}
+                              start={visible}
+                            />
                           </span>
                         )}
                       </Transition>

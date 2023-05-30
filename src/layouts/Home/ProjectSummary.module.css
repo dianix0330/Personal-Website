@@ -139,6 +139,12 @@
   }
 }
 
+.image {
+  position: relative;
+  width: 100%;
+  margin: 20px;
+}
+
 .svg {
   opacity: 0;
   transition: opacity 1200ms ease 1400ms;

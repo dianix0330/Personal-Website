@@ -8,6 +8,7 @@ import RouterLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useRef, useState } from 'react';
 import { cssProps, media, msToNum, numToMs } from 'utils/style';
+import { Button } from 'components/Button';
 import { NavToggle } from './NavToggle';
 import styles from './Navbar.module.css';
 import { ThemeToggle } from './ThemeToggle';
@@ -156,14 +157,15 @@ export const Navbar = () => {
         <div className={styles.navList}>
           {navLinks.map(({ label, pathname }) => (
             <RouterLink href={pathname} scroll={false} key={label}>
-              <a
-                data-navbar-item
-                className={styles.navLink}
-                aria-current={getCurrent(pathname)}
-                onClick={handleNavItemClick}
-              >
-                {label}
-              </a>
+              <Button secondary={true} className={styles.navItem}>
+                <a
+                  data-navbar-item
+                  aria-current={getCurrent(pathname)}
+                  onClick={handleNavItemClick}
+                >
+                  {label}
+                </a>
+              </Button>
             </RouterLink>
           ))}
         </div>

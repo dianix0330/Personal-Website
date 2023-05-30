@@ -35,3 +35,10 @@
     z-index: -1;
   }
 }
+
+.navbar__temp {
+  width: 100vw;
+  height: 150px;
+  padding-top: var(--spaceOuter);
+  padding-left: var(--spaceOuter);
+}

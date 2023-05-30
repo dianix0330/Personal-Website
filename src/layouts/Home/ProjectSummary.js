@@ -7,10 +7,12 @@ import { Section } from 'components/Section';
 import { Text } from 'components/Text';
 import { useTheme } from 'components/ThemeProvider';
 import { Transition } from 'components/Transition';
+import { Image } from 'components/Image';
 import { useWindowSize } from 'hooks';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import { cssProps, media } from 'utils/style';
+
 import styles from './ProjectSummary.module.css';
 
 const Model = dynamic(() => import('components/Model').then(mod => mod.Model));
@@ -23,6 +25,9 @@ export const ProjectSummary = ({
   title,
   description,
   model,
+  image,
+  imagelarge,
+  placeholderimage,
   buttonText,
   buttonLink,
   alternate,
@@ -73,6 +78,19 @@ export const ProjectSummary = ({
 
   const renderPreview = visible => (
     <div className={styles.preview}>
+      {
+        <div className={styles.image} data-device="mobile">
+          <Image
+            reveal
+            delay={100}
+            placeholder={placeholderimage}
+            show={visible}
+            srcSet={[image, imagelarge]}
+            sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
+            alt="Fuzu - Job search platform"
+          />
+        </div>
+      }
       {/* {model.type === 'laptop' && (
         <>
           <div className={styles.model} data-device="laptop">

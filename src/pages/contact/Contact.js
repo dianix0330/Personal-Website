@@ -1,3 +1,4 @@
+import emailjs from 'emailjs-com';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
@@ -18,51 +19,47 @@ import styles from './Contact.module.css';
 export const Contact = () => {
   const errorRef = useRef();
   const email = useFormInput('');
+  const name = useFormInput('');
   const message = useFormInput('');
+  const form = useRef();
   const [sending, setSending] = useState(false);
   const [complete, setComplete] = useState(false);
   const [statusError, setStatusError] = useState('');
   const initDelay = tokens.base.durationS;
 
+  const serviceId = 'service_72jodxf';
+  const templateId = 'template_0tbohxi';
+  const public_key = 'SUp9B1ldd-hlAlpcd';
+
   const onSubmit = async event => {
     event.preventDefault();
-    setStatusError('');
 
-    if (sending) return;
-
-    try {
-      setSending(true);
-
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/message`, {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: email.value,
-          message: message.value,
-        }),
-      });
-
-      const responseMessage = await response.json();
-
-      const statusError = getStatusError({
-        status: response?.status,
-        errorMessage: responseMessage?.error,
-        fallback: 'There was a problem sending your message',
-      });
-
-      if (statusError) throw new Error(statusError);
-
-      setComplete(true);
-      setSending(false);
-    } catch (error) {
-      setSending(false);
-      setStatusError(error.message);
-    }
+    sendEmail();
   };
 
+  const sendEmail = async () => {
+    //Create a template params object
+    const templateParams = {
+      to_name: 'Daniel Ayala',
+      from_name: name.value,
+      from_email: email.value,
+      message: message.value,
+    };
+
+    console.log(templateParams);
+
+    try {
+      //Send Email via EmailJS
+      setSending(true);
+      await emailjs.send(serviceId, templateId, templateParams, public_key);
+      setSending(false);
+      setComplete(true);
+    } catch (error) {
+      setSending(false);
+      setStatusError(error);
+      console.log(error);
+    }
+  };
   return (
     <Section className={styles.contact}>
       <Meta
@@ -71,7 +68,7 @@ export const Contact = () => {
       />
       <Transition unmount in={!complete} timeout={1600}>
         {(visible, status) => (
-          <form className={styles.form} method="post" onSubmit={onSubmit}>
+          <form className={styles.form} method="post" onSubmit={onSubmit} ref={form}>
             <Heading
               className={styles.title}
               data-status={status}
@@ -79,12 +76,23 @@ export const Contact = () => {
               as="h1"
               style={getDelay(tokens.base.durationXS, initDelay, 0.3)}
             >
-              <DecoderText text="Say hello" start={status !== 'exited'} delay={300} />
+              <DecoderText text="SAY HELLO" start={status !== 'exited'} delay={300} />
             </Heading>
             <Divider
               className={styles.divider}
               data-status={status}
               style={getDelay(tokens.base.durationXS, initDelay, 0.4)}
+            />
+            <Input
+              required
+              className={styles.input}
+              data-status={status}
+              style={getDelay(tokens.base.durationXS, initDelay)}
+              autoComplete="name"
+              label="Your Name"
+              type="text"
+              maxLength={512}
+              {...name}
             />
             <Input
               required

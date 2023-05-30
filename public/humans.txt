@@ -1,14 +1,18 @@
-__  __  __
-\ \ \ \ \/
- \ \/\ \
-  \/  \/
+        ______
+       /      \
+      /   /\   \
+     /   /  \   \
+    /   /____\   \
+   /   ________   \   
+  /   /        \   \   
+ /___/          \___\
 
 The humans.txt file explains the team, technology,
 and graphic assets behind this site humanstxt.org.
 
 _______________________________________________________________________________
 
-DESIGNER | デザイナー
+DESIGNER
 
 Daniel Ayala
 Hand crafted design & web development
@@ -18,12 +22,12 @@ Figma
 Photoshop
 Blender
 
-twitter.com/hamishmw
-github.com/hamishmw
+twitter.com/
+github.com/dianix0330
 
 _______________________________________________________________________________
 
-TECHNOLOGY | テクノロジー
+TECHNOLOGY
 
 React
 Next.js
@@ -32,7 +36,7 @@ Framer Motion
 
 _______________________________________________________________________________
 
-FONTS | フォント
+FONTS
 
 Gotham
-Hiragino Kaku Gothic
+Arial

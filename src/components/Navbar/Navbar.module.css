@@ -2,15 +2,16 @@
   --headerNavFontSize: calc((16 / 16) * 1rem);
 
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  animation: bgchange 10s infinite alternate;
   justify-content: flex-start;
   padding: 0;
-  width: var(--space2XL);
+  width: 100vw;
+  top: 0px;
   position: fixed;
-  top: var(--spaceOuter);
-  left: var(--spaceOuter);
-  bottom: var(--spaceOuter);
+  padding-left: var(--spaceOuter);
+  height: 150px;
   z-index: var(--zIndex4);
   isolation: isolate;
 
@@ -20,6 +21,12 @@
 
   @media (--mediaMobile), (--mediaMobileLS) {
     bottom: auto;
+  }
+}
+
+@keyframes bgchange {
+  100% {
+    background: #c1c4df;
   }
 }
 
@@ -36,11 +43,11 @@
 
 .nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex: 1 1 auto;
-  max-width: var(--space2XL);
+  max-width: var(--space5XL);
 
   @media (--mediaMobile), (--mediaMobileLS) {
     display: none;
@@ -48,13 +55,14 @@
 }
 
 .navList {
-  transform: rotate(-90deg) translate3d(-50%, 0, 0);
   display: flex;
   flex-direction: row-reverse;
   position: relative;
-  top: calc(var(--spaceM) * -1);
 }
 
+.navItem {
+  margin: 0px 10px;
+}
 .navLink {
   padding: var(--spaceM);
   color: rgb(var(--rgbText) / 0.8);
@@ -102,7 +110,7 @@
 
 .navIcons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   position: relative;

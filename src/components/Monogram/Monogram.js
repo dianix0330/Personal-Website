@@ -9,24 +9,35 @@ export const Monogram = forwardRef(({ highlight, className, ...props }, ref) => 
   return (
     <svg
       aria-hidden
-      className={classes(styles.monogram, className)}
-      width="46"
-      height="29"
-      viewBox="0 0 46 29"
-      ref={ref}
-      {...props}
+      version="1.0"
+      xmlns="http://www.w3.org/2000/svg"
+      width="48.000000pt"
+      height="48.000000pt"
+      viewBox="0 0 48.000000 48.000000"
+      preserveAspectRatio="xMidYMid meet"
     >
-      <defs>
-        <clipPath id={clipId}>
-          <path d="M16.525 28.462l7.18-18.35.003-.001 9.72 18.442a.838.838 0 001.524-.093l3.39-8.824a.846.846 0 00-.04-.686L30.307 3.605A6.698 6.698 0 0024.367 0h-4.6a.84.84 0 00-.74 1.23l3.63 6.887-3.655 9.15-7.12-13.662A6.698 6.698 0 005.942 0h-4.6a.842.842 0 00-.748 1.23L15 28.554a.839.839 0 001.524-.092zM42.392 8.806a.835.835 0 00.387-.446v.001l2.67-7.23a.838.838 0 00-.785-1.129h-6.578a.837.837 0 00-.736 1.238l3.907 7.226c.22.41.729.56 1.135.34z" />
-        </clipPath>
-      </defs>
-      <rect clipPath={`url(#${clipId})`} width="100%" height="100%" />
-      {highlight && (
-        <g clipPath={`url(#${clipId})`}>
-          <rect className={styles.highlight} width="100%" height="100%" />
-        </g>
-      )}
+      <g
+        transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)"
+        fill="#000000"
+        stroke="none"
+      >
+        <path
+          d="M0 240 l0 -240 178 0 179 0 61 62 62 61 0 179 0 178 -240 0 -240 0 0
+-240z m152 79 c70 -19 87 -104 31 -149 -19 -14 -41 -20 -79 -20 l-54 0 0 83
+c0 46 3 87 7 90 9 10 53 8 95 -4z m227 -75 c17 -47 31 -87 31 -90 0 -11 -41
+-2 -46 11 -4 10 -20 15 -45 15 -28 0 -39 -4 -39 -15 0 -9 -9 -15 -25 -15 l-24
+0 30 81 c37 101 35 99 64 99 20 0 27 -11 54 -86z"
+        />
+        <path
+          d="M100 240 c0 -46 2 -50 23 -50 13 0 28 5 35 12 29 29 2 88 -39 88 -16
+0 -19 -7 -19 -50z"
+        />
+        <path
+          d="M312 252 c-10 -29 -9 -32 9 -32 20 0 23 12 10 44 -7 18 -9 16 -19
+-12z"
+        />
+        {highlight && <rect className={styles.highlight} width="100%" height="100%" />}
+      </g>
     </svg>
   );
 });
