@@ -13,6 +13,8 @@ import sprTexture from 'assets/spr-lesson-builder-dark.jpg';
 
 import { Footer } from 'components/Footer';
 import { Meta } from 'components/Meta';
+import { Heading } from 'components/Heading';
+import { Section } from 'components/Section';
 import { Carousel } from 'components/Carousel';
 import { Intro } from 'layouts/Home/Intro';
 import { Profile } from 'layouts/Home/Profile';
@@ -33,7 +35,15 @@ import pinpil from 'assets/pimgs/Pinpil/Pinpil.png';
 import pinpilLarge from 'assets/pimgs/Pinpil/Pinpil-large.png';
 import pinpilPlaceholder from 'assets/pimgs/Pinpil/Pinpil-large.png';
 
+import Dimply from 'assets/pimgs/Voypost/Dimply.jpg';
+import Petit from 'assets/pimgs/Voypost/PetitChefs.jpg';
+import Praqio from 'assets/pimgs/Voypost/Praqio.jpg';
+import Unjake from 'assets/pimgs/Voypost/Unjake.jpg';
+
 const disciplines = ['Effort', 'Innovation', 'Collaboration', 'Passion', 'Patience'];
+
+const carouselPlaceholderImg =
+  'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAICAgICAQICAgIDAgIDAwYEAwMDAwcFBQQGCAcJCAgHCAgJCg0LCQoMCggICw8LDA0ODg8OCQsQERAOEQ0ODg7/2wBDAQIDAwMDAwcEBAcOCQgJDg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg7/wgARCAASACADAREAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAABAUHBgn/xAAZAQEAAwEBAAAAAAAAAAAAAAAFAwQGAgj/2gAMAwEAAhADEAAAAOanpHEuRHdAjSk8GcqnLA1RdO5nscBYolLViNGLY7CLKMf/xAAjEAABBAEDBAMAAAAAAAAAAAABAAIDBAUSFFETJTIzNILB/9oACAEBAAE/AIYbMngCVRZJXnDpAsndbNhXNPCezuTtPKw23ZS1PaFfmjfaIjCyU5Zj3KkepkTq5VX4CPvKynoKxwG6+w/V/8QAGxEAAwADAQEAAAAAAAAAAAAAAAECAwQRMhL/2gAIAQIBAT8AzpRBirtDxfSJxSmbGwrniNaX0u5xwVtLpJgNryyvR//EABwRAAMAAwEBAQAAAAAAAAAAAAABAgMEESEyE//aAAgBAwEBPwDXzu74U0kXsJTwzW6fhp6lRXWZ/nwvFdMxaN0Sl+Y/sSRrpcP/2Q==';
 
 export const Home = () => {
   const [visibleSections, setVisibleSections] = useState([]);
@@ -180,6 +190,35 @@ export const Home = () => {
         image={sprTexture}
         placeholderimage={sprTexturePlaceholder}
       />
+      <Section className={styles.carouselSection}>
+        <Heading level={3} className={styles.carouselHeader}>
+          Other projects
+        </Heading>
+        <Carousel
+          style={{ maxWidth: 900, width: '100%' }}
+          placeholder={{ src: carouselPlaceholderImg }}
+          images={[
+            {
+              src: Dimply,
+              alt: 'A neon sign with kanji',
+            },
+            {
+              src: Petit,
+              alt: 'Tokyo at night',
+            },
+            {
+              src: Praqio,
+              alt: 'A rad cyberpunk dude',
+            },
+            {
+              src: Unjake,
+              alt: 'A rad cyberpunk dude',
+            },
+          ]}
+          width={900}
+          height={600}
+        />
+      </Section>
       <Profile
         sectionRef={details}
         visible={visibleSections.includes(details.current)}

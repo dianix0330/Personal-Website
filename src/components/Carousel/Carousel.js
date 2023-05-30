@@ -250,7 +250,7 @@ export const Carousel = ({ width, height, images, placeholder, ...rest }) => {
       };
 
       const placeholderElement = placeholderRef.current;
-      placeholderElement.addEventListener('transitionend', purgePlaceholder);
+      placeholderElement?.addEventListener('transitionend', purgePlaceholder);
 
       return () => {
         if (placeholderElement) {
